@@ -1,0 +1,2 @@
+1、getElementsByClassName获取元素得到类型HTMLCollection类型，得到结果是动态的。
+2、querySelectorAll获取元素得到类型NodeList类型，得到结果是静态的。
