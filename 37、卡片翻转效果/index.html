@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .card {
+      position: relative;
+      perspective: 500px;
+    }
+
+    .face {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background: green;
+    }
+
+    .back {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background: yellow;
+    }
+
+    .face {
+      transition: 0.5s;
+      backface-visibility: hidden;
+    }
+
+    .card:hover .face {
+      transform: rotateY(-180deg);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+      transition: 0.5s;
+    }
+
+    .card:hover .back {
+      transform: rotateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <p class="face">
+      <span>卢小雨</span>
+    </p>
+    <p class="back">
+      <span>陈大思</span>
+    </p>
+  </div>
+</body>
+</html>
