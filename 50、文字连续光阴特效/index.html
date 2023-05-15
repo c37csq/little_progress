@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字连续光影特效</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1e1f25;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4.5em;
+      font-weight: bold;
+      font-family: 'Roboto Mono';
+    }
+
+    span {
+      color: #faebd7;
+      animation: shadowing 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes shadowing {
+      to {
+        color: #ff0266;
+        text-shadow: 20px 0 70px #ff0266;
+      }
+    }
+
+
+    span:nth-child(n + 2) {
+      animation-delay: 0.2s;
+    }
+
+    span:nth-child(n + 3) {
+      animation-delay: 0.4s;
+    }
+
+    span:nth-child(n + 4) {
+      animation-delay: 0.6s;
+    }
+
+    span:nth-child(n + 5) {
+      animation-delay: 0.8s;
+    }
+
+    span:nth-child(n + 6) {
+      animation-delay: 1s;
+    }
+
+    span:nth-child(n + 7) {
+      animation-delay: 1.2s;
+    }
+
+    span:nth-child(n + 8) {
+      animation-delay: 1.4s;
+    }
+  </style>
+</head>
+<body>
+  <div class="text-area">
+    <span>F</span>
+    <span>O</span>
+    <span>L</span>
+    <span>L</span>
+    <span>O</span>
+    <span>W</span>
+    <span>M</span>
+    <span>E</span>
+  </div>
+</body>
+</html>
