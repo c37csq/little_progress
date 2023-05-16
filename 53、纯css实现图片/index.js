@@ -90,7 +90,6 @@ async function generate() {
   cvs.height = img.height;
   const ctx = cvs.getContext("2d");
   ctx.drawImage(img, 0, 0);
-
   // 获取canvas中的位图
   const bmp = ctx.getImageData(0, 0, img.width, img.height).data;
   const html = createHTML(img.width, img.height, bmp);

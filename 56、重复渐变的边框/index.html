@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重复渐变的边框</title>
+  <style>
+    .card {
+      width: 300px;
+      margin: 0 auto;
+      background: repeating-linear-gradient(
+        -45deg,
+        #e8544d,
+        #e8544d 10px,
+        #fff 10px,
+        #fff 20px,
+        #75adf8 20px,
+        #75adf8 30px,
+        #fff 30px,
+        #fff 40px
+      ) -20px -20px/200% 200%;
+      padding: 5px;
+      transition: 0.5s;
+    }
+    .container {
+      padding: 10px;
+      background-color: #fff;
+    }
+    .card:hover {
+      box-shadow: 0 3px 10px rgba(0, 0, 0);
+      background-position: 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="container">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iste provident ducimus repellat temporibus quod et exercitationem illum nulla. Nesciunt nisi tenetur eveniet voluptatibus quidem sint temporibus corporis dolore necessitatibus.
+    </div>
+  </div>
+</body>
+</html>
