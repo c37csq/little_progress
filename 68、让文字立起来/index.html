@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>让文字立起来</title>
+  <style>
+    body {
+      background-color: #ccc;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 120px;
+      font-weight: 700;
+      font-family: 'Montserrat';
+      text-align: center;
+    }
+
+    h1::before {
+      content: 'SHADOW';
+      position: absolute;
+      color: #000;
+      transform: translate(-50px, 21px) scaleY(0.5) skew(50deg);
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-mask-image: linear-gradient(transparent, #000);
+    }
+  </style>
+</head>
+<body>
+  <h1>SHADOW</h1>
+</body>
+</html>

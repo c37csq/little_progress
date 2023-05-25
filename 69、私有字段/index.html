@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私有字段</title>
+</head>
+<body>
+  <script>
+    class A {
+      #abc; // 定义一个私有字段
+      constructor() {
+        this.#abc = 1;
+      }
+      #method() {
+        
+      }
+    }
+
+    let a = new A();
+    console.log(a);
+  </script>
+</body>
+</html>
