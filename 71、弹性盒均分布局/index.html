@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>弹性盒均分布局</title>
+  <style>
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+    }
+    .part {
+      /* 表示在当前内容的宽度下吃掉剩余空间 */
+      /* flex-grow: 1; */
+      /*  默认值auto */
+      /* flex-basis: 0; */
+      flex: 1 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="part" style="background: red;">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequatur omnis labore vero at esse eveniet natus est. Odit corrupti cum libero reprehenderit quo quidem placeat autem repudiandae, magnam quia.
+    </div>
+    <div class="part" style="background: #f3be50;"></div>
+    <div class="part" style="background: #61c354;"></div>
+  </div>
+</body>
+</html>
