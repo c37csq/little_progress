@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拖拽排序</title>
+  <style>
+    .list {
+    }
+    .list-item {
+      width: 400px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      background-color: lightblue;
+      margin: 8px auto;
+      cursor: move;
+      user-select: none;
+      border-radius: 5px;
+    }
+    .list-item.moving {
+      background: transparent;
+      color: transparent;
+      border: 1px dashed #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="list">
+    <div draggable="true" class="list-item">1</div>
+    <div draggable="true" class="list-item">2</div>
+    <div draggable="true" class="list-item">3</div>
+    <div draggable="true" class="list-item">4</div>
+    <div draggable="true" class="list-item">5</div>
+  </div>
+  <!-- <script src="./Flip.js"></script> -->
+  <script src="./index.js"></script>
+</body>
+</html>
