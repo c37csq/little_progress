@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中断和恢复任务序列</title>
+</head>
+<body>
+  <button id="begin">开始任务</button>
+  <button id="pause">暂停任务</button>
+  <script src="./index.js"></script>
+  <script>
+    const tasks = [];
+    for (let i = 0; i < 5; i++) {
+      tasks.push(
+        () => new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(i);
+          }, 2000);
+        })
+      );
+    }
+
+    const processor = processTasks(...tasks);
+
+    begin.onclick = async () => {
+      console.log('开始任务');
+      const results = await processor.start();
+      console.log('任务执行完成', results);
+    }
+
+    pause.onclick = () => {
+      console.log('点击暂停');
+      processor.pause();
+    }
+  </script>
+</body>
+</html>
