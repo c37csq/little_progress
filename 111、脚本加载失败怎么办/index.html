@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>引入脚本加载失败应该怎么办</title>
+  <script>
+    const domains = [
+      'taobao.com',
+      'jd.com',
+      'baidu.com'
+    ];
+    const maxRetry = 3;
+    const retryInfo = {};
+    window.addEventListener('error', (e) => {
+      const tag = e.target;
+      if (tag.tagName === 'SCRIPT' && !(e instanceof ErrorEvent)) {
+        const url = new URL(tag.src);
+        if (!retryInfo[url.pathname]) {
+          retryInfo[url.pathname] = {
+            times: 0,
+            nextIndex: 0
+          }
+        }
+        const info = retryInfo[url.pathname];
+        // const script = document.createElement('script');
+        url.host = domains[info.nextIndex];
+        // 阻塞后续页面加载
+        document.write(`<script src="${url.toString()}">\<\/script>`);
+        // script.src = url.toString();
+        // document.body.insertBefore(script, tag);
+        info.times++;
+        info.nextIndex = (info.nextIndex+1) % domains.length;
+      }
+    }, true);
+  </script>
+</head>
+<body>
+  <script src="http://static.com/1.js"></script>
+  <script src="http://other-domain/2.js"></script>
+  <script src="http://static.com/3.js"></script>
+  <script>
+    throw 1;
+  </script>
+</body>
+</html>
