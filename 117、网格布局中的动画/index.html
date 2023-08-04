@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网格布局中的动画</title>
+  <style>
+    body {
+      background-color: #23262d;
+    }
+    .container {
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      margin-top: 50px;
+      display: grid;
+      --c1: 1fr;
+      --c2: 1fr;
+      --c3: 1fr;
+      --r1: 1fr;
+      --r2: 1fr;
+      --r3: 1fr;
+      grid-template-columns: var(--c1) var(--c2) var(--c3);
+      grid-template-rows: var(--r1) var(--r2) var(--r3);
+      transition: 0.5s;
+      grid-gap: 10px;
+    }
+    .item:nth-child(1) {
+      background-color: #ff4747;
+    }
+    .item:nth-child(2) {
+      background-color: #ffc247;
+    }
+    .item:nth-child(3) {
+      background-color: #c2ff47;
+    }
+    .item:nth-child(4) {
+      background-color: #47ff47;
+    }
+    .item:nth-child(5) {
+      background-color: #47ffc2;
+    }
+    .item:nth-child(6) {
+      background-color: #47c2ff;
+    }
+    .item:nth-child(7) {
+      background-color: #4747ff;
+    }
+    .item:nth-child(8) {
+      background-color: #c247ff;
+    }
+    .item:nth-child(9) {
+      background-color: #ff47c2;
+    }
+
+    .container:has(.item:nth-child(1):hover) {
+      --r1: 2fr;
+      --c1: 2fr;
+    }
+    .container:has(.item:nth-child(2):hover) {
+      --r1: 2fr;
+      --c2: 2fr;
+    }
+    .container:has(.item:nth-child(3):hover) {
+      --r1: 2fr;
+      --c3: 2fr;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+</html>
