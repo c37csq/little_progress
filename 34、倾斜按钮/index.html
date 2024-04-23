@@ -1,67 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-    
-    body {
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
 
-    button {
-      margin: 150px;
-      width: 150px;
-      height: 60px;
-      background: #000;
-      color: #fff;
-      text-align: center;
-      line-height: 60px;
-      font-size: 18px;
-      border-radius: 15px 0;
-      position: relative;
-      border: none;
-      transform: skew(-30deg);
-    }
+      body {
+        text-align: center;
+      }
 
-    button span {
-      display: inline-block;
-      transform: skew(30deg);
-    }
+      button {
+        margin: 150px;
+        width: 150px;
+        height: 60px;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        line-height: 60px;
+        font-size: 18px;
+        border-radius: 15px 0;
+        position: relative;
+        border: none;
+        transform: skew(-30deg);
+      }
 
-    button::before {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle at 0 0, transparent, transparent 20px, #000 20px);;
-      bottom: 0;
-      left: -20px;
-    }
+      button span {
+        display: inline-block;
+        transform: skew(30deg);
+      }
 
-    button::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: radial-gradient(circle at 100% 100%, transparent, transparent 20px, #000 20px);;
-      top: 0;
-      right: -20px;
-    }
-  </style>
-</head>
-<body>
-  <button>
-    <span>
-      倾斜按钮
-    </span>
-  </button>
-</body>
+      button::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(
+          circle at 0 0,
+          transparent,
+          transparent 20px,
+          #000 20px
+        );
+        /* background: radial-gradient(circle at 0 100%, transparent ,orange 20rpx); */
+        bottom: 0;
+        left: -20px;
+      }
+
+      button::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(
+          circle at 100% 100%,
+          transparent,
+          transparent 20px,
+          #000 20px
+        );
+        top: 0;
+        right: -20px;
+      }
+
+      .box {
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(
+          circle at 0 100%,
+          transparent,
+          transparent 60px,
+          #000 60px
+        );
+      }
+
+      .box2 {
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(
+          circle at 100% 0,
+          transparent,
+          transparent 60px,
+          #000 60px
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <button>
+      <span> 倾斜按钮 </span>
+    </button>
+    <div class="box"></div>
+    <div class="box2"></div>
+  </body>
 </html>

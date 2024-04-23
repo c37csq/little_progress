@@ -873,16 +873,16 @@ function handleExport() {
   let merges = doMerges(excelHeader);
   // 生成sheet
   let ws = aoa_to_sheet(excelHeader, headerRows);
-  const arrMap = dataSource.value.map(item => ({
+  const arrMap = dataSource.value.map((item) => ({
     name: item.regionName,
     id: item.regionId,
-    count: dataSource.value.filter(v => v.regionId === item.regionId).length
+    count: dataSource.value.filter((v) => v.regionId === item.regionId).length,
   }));
 
   // 删除最后合计的那一项regionId为null
   arrMap.pop();
 
-  const numMapArr = unique(arrMap, 'id');
+  const numMapArr = unique(arrMap, "id");
 
   const length = numMapArr.length;
 
@@ -896,7 +896,7 @@ function handleExport() {
         e: {
           c: 0,
           r: numMapArr[0].count + 2,
-        }
+        },
       },
       {
         s: {
@@ -906,8 +906,8 @@ function handleExport() {
         e: {
           c: 1,
           r: numMapArr[0].count + 2,
-        }
-      },
+        },
+      }
     );
   }
 
@@ -921,7 +921,7 @@ function handleExport() {
         e: {
           c: 0,
           r: numMapArr[0].count + numMapArr[1].count + 2,
-        }
+        },
       },
       {
         s: {
@@ -931,9 +931,9 @@ function handleExport() {
         e: {
           c: 1,
           r: numMapArr[0].count + numMapArr[1].count + 2,
-        }
-      },
-    )
+        },
+      }
+    );
   }
 
   if (length >= 3) {
@@ -946,7 +946,7 @@ function handleExport() {
         e: {
           c: 0,
           r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + 2,
-        }
+        },
       },
       {
         s: {
@@ -956,9 +956,9 @@ function handleExport() {
         e: {
           c: 1,
           r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + 2,
-        }
-      },
-    )
+        },
+      }
+    );
   }
 
   if (length >= 4) {
@@ -970,8 +970,13 @@ function handleExport() {
         },
         e: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + 2,
-        }
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            2,
+        },
       },
       {
         s: {
@@ -980,10 +985,15 @@ function handleExport() {
         },
         e: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + 2,
-        }
-      },
-    )
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            2,
+        },
+      }
+    );
   }
 
   if (length >= 5) {
@@ -991,24 +1001,46 @@ function handleExport() {
       {
         s: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            3,
         },
         e: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + 2,
-        }
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            2,
+        },
       },
       {
         s: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            3,
         },
         e: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + 2,
-        }
-      },
-    )
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            2,
+        },
+      }
+    );
   }
 
   if (length >= 6) {
@@ -1016,24 +1048,50 @@ function handleExport() {
       {
         s: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            3,
         },
         e: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + 2,
-        }
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            2,
+        },
       },
       {
         s: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            3,
         },
         e: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + 2,
-        }
-      },
-    )
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            2,
+        },
+      }
+    );
   }
 
   if (length >= 7) {
@@ -1041,24 +1099,54 @@ function handleExport() {
       {
         s: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            3,
         },
         e: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + numMapArr[6].count + 2,
-        }
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            numMapArr[6].count +
+            2,
+        },
       },
       {
         s: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            3,
         },
         e: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + numMapArr[6].count + 2,
-        }
-      },
-    )
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            numMapArr[6].count +
+            2,
+        },
+      }
+    );
   }
 
   if (length >= 8) {
@@ -1066,38 +1154,70 @@ function handleExport() {
       {
         s: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + numMapArr[6].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            numMapArr[6].count +
+            3,
         },
         e: {
           c: 0,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + numMapArr[6].count + numMapArr[7].count + 2,
-        }
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            numMapArr[6].count +
+            numMapArr[7].count +
+            2,
+        },
       },
       {
         s: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + numMapArr[6].count + 3,
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            numMapArr[6].count +
+            3,
         },
         e: {
           c: 1,
-          r: numMapArr[0].count + numMapArr[1].count + numMapArr[2].count + numMapArr[3].count + numMapArr[4].count + numMapArr[5].count + numMapArr[6].count + numMapArr[7].count + 2,
-        }
-      },
-    )
+          r:
+            numMapArr[0].count +
+            numMapArr[1].count +
+            numMapArr[2].count +
+            numMapArr[3].count +
+            numMapArr[4].count +
+            numMapArr[5].count +
+            numMapArr[6].count +
+            numMapArr[7].count +
+            2,
+        },
+      }
+    );
   }
 
-  merges.push(
-    {
-      s: {
-        c: 0,
-        r: dataSource.value.length + 2,
-      },
-      e: {
-        c: 2,
-        r: dataSource.value.length + 2,
-      }
+  merges.push({
+    s: {
+      c: 0,
+      r: dataSource.value.length + 2,
     },
-  )
+    e: {
+      c: 2,
+      r: dataSource.value.length + 2,
+    },
+  });
 
   // 单元格合并
   ws["!merges"] = merges;
